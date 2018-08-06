@@ -1,0 +1,7 @@
+.container {
+  height: 100%;
+  line-height: 1.4;
+  font-size: 24rpx;
+  box-sizing: border-box;
+  background-color: #ffffff;
+} 
