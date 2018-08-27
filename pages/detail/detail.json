@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "m-tip": "../../base/tip/tip",
+    "m-icon": "../../base/icon/icon",
+    "m-comment": "../../components/comment/comment"
+  }
+}

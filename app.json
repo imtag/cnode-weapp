@@ -2,16 +2,18 @@
   "pages":[
     "pages/home/home",
     "pages/message/message",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/detail/detail",
+    "pages/user/user"
   ],
   "window":{
-    "navigationBarTextStyle":"black",
-    "navigationStyle": "custom"
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#bbbbbb",
-    "selectedColor": "#444444",
-    "backgroundColor": "#ffffff",
+    "color": "#bbb",
+    "selectedColor": "#222",
+    "backgroundColor": "#fff",
     "borderStyle": "white",
     "list": [
       {
@@ -40,5 +42,5 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "debug": true
+  "debug": false
 }

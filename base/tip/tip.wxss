@@ -1,0 +1,14 @@
+.tip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.tip__desc {
+  padding: 30rpx 0 20rpx;
+  color: #666;
+}
+.tip__retry {
+  color: #576b95;
+}

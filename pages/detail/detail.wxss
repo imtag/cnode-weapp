@@ -1,0 +1,114 @@
+@import "../../libs/wxParse/wxParse.wxss";
+
+.detail {
+  position: relative;
+  padding-bottom: 100rpx;
+}
+.detail__article {
+  padding: 28rpx;
+}
+.detail__author {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0 40rpx;
+}
+.detail__author-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+}
+.detail__author-time {
+  font-size: 24rpx;
+  color: #666;
+}
+.detail__title {
+  font-size: 36rpx;
+  font-weight: bold;
+  padding-top: 10rpx;
+}
+
+.detail__operate {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 11;
+  height: 90rpx;
+  padding: 0 28rpx;
+  background-color: #fff;
+}
+.detail_operate-inputbox {
+  flex: 1;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 24rpx;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  color: #888;
+  background-color: #f5f5f5;
+}
+.detail_operates {
+  display: flex;
+  justify-content: space-between;
+  width: 250rpx;
+  padding: 0 10rpx 0 50rpx;
+  text-align: center;
+}
+.detail_operate-item {
+  color: #666;
+}
+.detail_operate-text {
+  line-height: 1.2;
+  font-size: 20rpx;
+}
+/* 重置button样式 */
+.detail_operate-sharebtn {
+  padding: 0;
+  border: none;
+  line-height: 1;
+  color: #666;
+  background-color: #fff;
+}
+.detail_operate-sharebtn::after {
+  border: none;
+}
+
+.detail__replies {
+  padding: 40rpx 28rpx 0;
+}
+.detail__replies-title {
+  line-height: 1;
+  margin-bottom: 40rpx;
+  padding-left: 20rpx;
+  border-left: 6rpx solid #222;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.detail__replies-wrap {
+  position: relative;
+  min-height: 260rpx;
+}
+.detail__reply {
+  display: flex;
+  margin-bottom: 60rpx;
+}
+.detail__reply-avatar {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 8rpx;
+}
+.detail__reply-body {
+  flex: 1;
+  padding-left: 26rpx;
+}
+.detail__reply-name {
+  color: #576b95;
+  line-height: 1;
+}
+.detail__reply-content {
+  padding-top: 15rpx;
+}
+

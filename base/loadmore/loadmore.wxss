@@ -1,0 +1,7 @@
+.loadmore {
+  height: 50px;
+  line-height: 50px;
+  font-size: 24rpx;
+  text-align: center;
+  color: #71777c;
+}

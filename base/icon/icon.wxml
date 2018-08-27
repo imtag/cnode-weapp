@@ -1,0 +1,4 @@
+<view
+  class="icon icon-{{ name }}" 
+  style="font-size:{{ size }}rpx;color:{{ color }};{{ bold && 'font-weight:bold;' }}">
+</view>

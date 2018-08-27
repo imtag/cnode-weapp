@@ -1,0 +1,23 @@
+<view class="tip" wx:if="{{ type !== 'success' }}">
+  <block wx:if="{{ type === 'loading' }}">
+    <m-icon
+      name="loading"
+      size="66">
+    </m-icon>
+  </block>
+  <block wx:if="{{ type === 'error' }}">
+    <m-icon
+      name="nonetwork"
+      size="80">
+    </m-icon>
+    <view class="tip__desc">{{ desc ? desc : '加载失败，请检查网络' }}</view>
+    <view class="tip__retry" bind:tap="retry">重试</view>
+  </block>
+  <block wx:if="{{ type === 'nodata' }}">
+    <m-icon
+      name="nodata"
+      size="80">
+    </m-icon>
+    <view class="tip__desc">{{ desc ? desc : '您可以去看看其他内容' }}</view>
+  </block>
+</view>

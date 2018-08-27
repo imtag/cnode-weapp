@@ -1,0 +1,85 @@
+<import src="../../libs/wxParse/wxParse.wxml"/>
+
+<view class="container detail">
+  <!-- 页面状态 -->
+  <m-tip
+    wx:if="{{ !detailData }}"
+    type="{{ tipType }}"
+    bind:retry="retryInitLoad">
+  </m-tip>
+
+  <block wx:else>
+    <!-- 文章 -->
+    <view class="detail__article">
+      <view class="detail__title">{{ detailData.title }}</view>
+      <view class="detail__author">
+        <image class="detail__author-avatar" src="{{ detailData.author.avatar_url }}"></image>
+        <view class="detail__author-info">
+          <view class="detail__author-name">{{ detailData.author.loginname }}</view>
+          <view class="detail__author-time">{{ detailData.create_at }}</view>
+        </view>
+      </view>
+      <view class="detail__content">
+        <view class="wxParse">
+          <template is="wxParse" data="{{ wxParseData:articleDetail.nodes }}"/>
+        </view>
+      </view>
+    </view>
+
+    <!-- 操作 -->
+    <view class="detail__operate">
+      <view class="detail_operate-inputbox" bind:tap="showComment">说点什么吧</view>
+      <view class="detail_operates">
+        <view class="detail_operate-item">
+          <m-icon name="comment"></m-icon>
+          <view class="detail_operate-text">{{ detailData.reply_count + '条' }}</view>
+        </view>
+        <view class="detail_operate-item">
+          <m-icon name="like"></m-icon>
+          <view class="detail_operate-text">收藏</view>
+        </view>
+        <view class="detail_operate-item">
+          <button open-type="share" class="detail_operate-sharebtn">
+            <m-icon name="follow"></m-icon>
+            <view class="detail_operate-text">分享</view>
+          </button>
+        </view>
+      </view>
+    </view>
+
+    <!-- 评论 -->
+    <view class="detail__replies" id="replies">
+      <view class="detail__replies-title">最新评论</view>
+      <view class="detail__replies-wrap">
+        <!-- 无评论 -->
+        <m-tip
+          wx:if="{{ !detailData.replies.length }}"
+          type="nodata"
+          desc="暂无评论">
+        </m-tip>
+        <!-- 有评论 -->
+        <block wx:else>
+          <view
+            class="detail__reply"
+            wx:for="{{ detailData.replies }}"
+            wx:for-item="reply"
+            wx:key="{{ topic.id }}">
+            <view style="width: 50rpx;">
+              <image 
+                class="detail__reply-avatar"
+                src="{{ reply.author.avatar_url }}">
+              </image>
+            </view>
+            <view class="detail__reply-body">
+              <view class="detail__reply-name">{{ reply.author.loginname }}</view>
+              <view class="detail__reply-content">{{ reply.content }}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- 评论框 -->
+    <m-comment visible="{{ commentVisible }}" bind:publish="publishComment"></m-comment>
+  </block>
+</view>

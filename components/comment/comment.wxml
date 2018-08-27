@@ -1,0 +1,16 @@
+<view wx:if="{{ show }}" class="comment" catch:touchmove bind:tap="hide">
+  <view class="comment__wrap" catch:tap>
+    <view class="comment__header">
+        <view bind:tap="hide">取消</view>
+        <view style="{{ content ? 'color: #576b95' : 'color: #666;' }}" bind:tap="publish">发布</view>
+    </view>
+    <textarea
+      class="comment__body" 
+      placeholder="请输入评论内容"
+      show-confirm-bar="{{ false }}"
+      fixed
+      focus
+      auto-focus
+      bindinput="input" />
+  </view>
+</view>
